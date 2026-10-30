@@ -150,7 +150,7 @@
     </section>
 
     <!-- PANTALLA 02: COTIZAR (Paso 1) -->
-    <section data-paso="1" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+    <section data-paso="1" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
@@ -319,6 +319,274 @@
               class="btn w-full flex items-center justify-center text-base font-semibold cursor-pointer">Ver
               planes</button>
           </footer>
+    </section>
+
+    <!-- PANTALLA 03: ELEGIR PLAN (Paso 2) -->
+    <section data-paso="2" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+
+      <!-- Header Mobile -->
+      <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
+        <button class="text-text p-1 cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <span class="font-extrabold text-text text-lg">Elegí tu plan</span>
+      </header>
+
+      <!-- Header Desktop -->
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <!-- Contenedor Principal -->
+      <div class="flex-1 p-4 lg:p-12 lg:max-w-7xl lg:mx-auto w-full">
+
+        <!-- Títulos Desktop -->
+        <div class="hidden lg:block mb-6">
+          <span class="text-sm text-primary font-bold block mb-1">Seguro de Celular</span>
+          <h2 class="text-3xl font-extrabold text-text">Elegí tu plan</h2>
+        </div>
+
+        <!-- Stepper (Indicador de pasos) actualizado -->
+        <div
+          class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
+
+          <!-- Paso 1 Completo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[13px] lg:text-sm font-bold text-success">Cotizar</span>
+          </div>
+          <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 2 Activo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div
+              class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
+              2</div>
+            <span class="text-[13px] lg:text-sm font-bold text-primary">Plan</span>
+          </div>
+          <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 3 Inactivo -->
+          <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              3</div>
+            <span class="text-[13px] lg:text-sm font-semibold text-muted">Datos</span>
+          </div>
+          <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 4 Inactivo -->
+          <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              4</div>
+            <span class="text-[13px] lg:text-sm font-semibold text-muted">Pago</span>
+          </div>
+        </div>
+
+        <!-- Grilla Principal (Planes + Resumen) -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
+
+          <!-- Columna Izquierda: Tarjetas de Planes -->
+          <div
+            class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+
+              <!-- Plan Básico (Inactivo) -->
+              <label
+                class="card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
+                <div class="flex justify-between items-start">
+                  <span class="font-extrabold text-lg text-text">Básico</span>
+                  <div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center"></div>
+                </div>
+                <div>
+                  <span class="text-2xl font-extrabold text-text">$ 2.000</span>
+                  <span class="text-sm text-muted">/ mes</span>
+                </div>
+                <ul class="flex flex-col gap-2 mt-2">
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Robo con violencia
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-muted font-medium">
+                    <svg class="text-muted w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Rotura de pantalla
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-muted font-medium">
+                    <svg class="text-muted w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Hurto / pérdida
+                  </li>
+                </ul>
+              </label>
+
+              <!-- Plan Plus (Activo - Seleccionado) -->
+              <label
+                class="card relative p-5 lg:p-6 flex flex-col gap-4 border-2 border-primary bg-white rounded-[var(--radius)] cursor-pointer shadow-sm">
+                <div class="flex justify-between items-start">
+                  <div class="flex items-center gap-2">
+                    <span class="font-extrabold text-lg text-text">Plus</span>
+                    <span
+                      class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Recomendado</span>
+                  </div>
+                  <div class="w-5 h-5 rounded-full border-[6px] border-primary bg-white"></div>
+                </div>
+                <div>
+                  <span class="text-2xl font-extrabold text-text">$ 3.000</span>
+                  <span class="text-sm text-muted">/ mes</span>
+                </div>
+                <ul class="flex flex-col gap-2 mt-2">
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Robo con violencia
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Rotura de pantalla
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-muted font-medium">
+                    <svg class="text-muted w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Hurto / pérdida
+                  </li>
+                </ul>
+              </label>
+
+              <!-- Plan Premium (Inactivo) -->
+              <label
+                class="card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
+                <div class="flex justify-between items-start">
+                  <span class="font-extrabold text-lg text-text">Premium</span>
+                  <div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center"></div>
+                </div>
+                <div>
+                  <span class="text-2xl font-extrabold text-text">$ 4.500</span>
+                  <span class="text-sm text-muted">/ mes</span>
+                </div>
+                <ul class="flex flex-col gap-2 mt-2">
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Robo + rotura total
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Rotura de pantalla
+                  </li>
+                  <li class="flex items-center gap-2 text-xs text-text font-medium">
+                    <svg class="text-success w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Hurto / pérdida
+                  </li>
+                </ul>
+              </label>
+
+            </div>
+
+            <!-- Botones Desktop (Abajo de los planes) -->
+            <div class="mt-10 pt-6 border-t border-border hidden lg:flex justify-between">
+              <button type="button"
+                class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
+              <button type="button" class="btn px-8 text-base w-auto cursor-pointer">Continuar</button>
+            </div>
+
+          </div>
+
+          <!-- Columna Derecha: Tarjeta Resumen Actualizada (Solo Desktop) -->
+          <div
+            class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
+            <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
+            <div class="flex flex-col gap-3 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Seguro</span>
+                <span class="font-bold text-text">Celular</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Equipo</span>
+                <span class="font-bold text-text">Samsung Galaxy A55</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Plan</span>
+                <span class="font-bold text-text">Plus</span>
+              </div>
+            </div>
+
+            <hr class="my-5 border-border">
+
+            <div class="flex justify-between items-center mb-5">
+              <span class="text-sm text-muted">Total mensual</span>
+              <span class="text-lg font-extrabold text-text">$ 3.000</span>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-semibold">
+              <div class="min-w-[16px] text-success">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span class="text-muted font-normal">Contratación 100% online · cancelás cuando quieras</span>
+            </div>
+          </div>
+
+        </div> <!-- Fin Grilla -->
+      </div> <!-- Fin Contenedor -->
+
+      <!-- Footer Mobile con Resumen Flotante -->
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-between items-center px-1">
+          <span class="text-sm text-muted">Plan Plus · Galaxy A55</span>
+          <span class="text-sm font-extrabold text-text">$ 3.000/mes</span>
+        </div>
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Continuar</button>
+      </footer>
+
     </section>
 
   </main>
