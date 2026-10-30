@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cubrí Seguros</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
-  
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
+
   <!-- Colores para que Tailwind los detecte vía CDN -->
   <style type="text/tailwindcss">
     @theme {
@@ -26,17 +27,19 @@
   <link rel="stylesheet" href="css/tokens.css">
   <script type="module" src="js/app.js"></script>
 </head>
+
 <body class="bg-bg text-text min-h-screen font-sans">
   <main id="app-container">
-    
-    <section data-paso="0" class="flex flex-col min-h-screen lg:block lg:min-h-0">
-      
-      <header class="flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+
+    <section data-paso="0" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0">
+
+      <header
+        class="flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
         <div class="flex items-center gap-2">
           <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
           <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
         </div>
-        
+
         <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
           <a href="#" class="hover:text-text transition-colors">Seguros</a>
           <a href="#" class="hover:text-text transition-colors">Siniestros</a>
@@ -46,25 +49,30 @@
       </header>
 
       <div class="flex-1 p-4 lg:p-12 lg:grid lg:gap-12 lg:grid-cols-2 lg:items-center lg:max-w-7xl lg:mx-auto">
-        
+
         <div class="mb-6 lg:mb-0 lg:flex lg:flex-col lg:items-start lg:gap-6">
           <div class="hidden lg:inline-flex items-center gap-2 bg-green-100/50 px-3 py-1.5 rounded-full mb-2">
             <span class="text-success font-bold text-xs uppercase tracking-wide">Primer mes con 20% OFF</span>
           </div>
 
-          <h1 class="text-[32px] leading-9 lg:text-5xl lg:leading-[1.1] font-extrabold text-text mb-3 lg:mb-0">Protegé lo que más usás en menos de 3 minutos</h1>
-          
+          <h1 class="text-[32px] leading-9 lg:text-5xl lg:leading-[1.1] font-extrabold text-text mb-3 lg:mb-0">Protegé
+            lo que más usás en menos de 3 minutos</h1>
+
           <p class="text-muted text-base lg:text-lg mb-6 lg:mb-0">
-            Elegí qué querés asegurar. Cotizás al instante y contratás 100% online. <span class="hidden lg:inline">Sin papeles ni llamadas.</span>
+            Elegí qué querés asegurar. Cotizás al instante y contratás 100% online. <span class="hidden lg:inline">Sin
+              papeles ni llamadas.</span>
           </p>
-          
-          <button type="button" class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Cotizar ahora</button>
+
+          <button type="button"
+            class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Cotizar
+            ahora</button>
         </div>
-        
+
         <div class="flex flex-col gap-4">
           <div class="grid grid-cols-2 gap-4 lg:gap-6">
-            
-            <button type="button" id="btn-producto-celular" class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border opacity-70 bg-white rounded-[var(--radius)] cursor-pointer text-left transition-colors hover:shadow-md">
+
+            <button type="button" id="btn-producto-celular"
+              class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border opacity-70 bg-white rounded-[var(--radius)] cursor-pointer text-left transition-colors hover:shadow-md">
               <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
                 <img src="img/Celular.svg" alt="Celular" class="w-6 h-6">
               </div>
@@ -74,7 +82,8 @@
               </div>
             </button>
 
-            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+            <div
+              class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
               <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
                 <img src="img/hogar.svg" alt="Hogar" class="w-6 h-6">
               </div>
@@ -84,7 +93,8 @@
               </div>
             </div>
 
-            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+            <div
+              class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
               <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
                 <img src="img/bicicleta.svg" alt="Bicicleta" class="w-6 h-6">
               </div>
@@ -94,7 +104,8 @@
               </div>
             </div>
 
-            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+            <div
+              class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
               <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
                 <img src="img/Frame.svg" alt="Viaje" class="w-6 h-6">
               </div>
@@ -106,12 +117,14 @@
 
           </div>
 
-          <div class="card p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] mt-2 lg:hidden">
-            <span class="badge text-success bg-green-100 border-none font-bold text-[10px] px-2 py-1 tracking-wide">NUEVO</span>
+          <div
+            class="card p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] mt-2 lg:hidden">
+            <span
+              class="badge text-success bg-green-100 border-none font-bold text-[10px] px-2 py-1 tracking-wide">NUEVO</span>
             <span class="text-xs text-muted">Primer mes con 20% OFF en todos los planes</span>
           </div>
         </div>
-        
+
         <div class="hidden lg:grid grid-cols-3 gap-6 col-span-2 mt-8">
           <div class="card p-5 border border-border bg-white rounded-[var(--radius)] flex flex-col gap-1">
             <span class="font-bold text-sm text-text">100% online</span>
@@ -130,11 +143,185 @@
       </div>
 
       <footer class="p-4 mt-auto lg:hidden w-full bg-bg">
-        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Cotizar seguro de Celular</button>
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Cotizar seguro de
+          Celular</button>
       </footer>
 
     </section>
 
+    <!-- PANTALLA 02: COTIZAR (Paso 1) -->
+    <section data-paso="1" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+
+      <!-- Header Mobile -->
+      <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
+        <button class="text-primary p-1 border border-border rounded-md">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <span class="font-bold text-text text-lg">Cotizá tu seguro</span>
+      </header>
+
+      <!-- Header Desktop -->
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <!-- Contenedor Principal -->
+      <div class="flex-1 p-4 lg:p-12 lg:max-w-7xl lg:mx-auto w-full">
+
+        <!-- Títulos Desktop -->
+        <div class="hidden lg:block mb-6">
+          <span class="text-sm text-primary font-bold block mb-1">Seguro de Celular</span>
+          <h2 class="text-3xl font-extrabold text-text">Contanos sobre tu celular</h2>
+        </div>
+
+        <!-- Stepper (Indicador de pasos) -->
+        <!-- Stepper (Indicador de pasos) -->
+        <div
+          class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div
+              class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
+              1</div>
+            <span class="text-[13px] lg:text-sm font-bold text-primary">Cotizar</span>
+          </div>
+          <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
+          <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              2</div>
+            <span class="text-[13px] lg:text-sm font-semibold text-muted">Plan</span>
+          </div>
+          <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
+          <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              3</div>
+            <span class="text-[13px] lg:text-sm font-semibold text-muted">Datos</span>
+          </div>
+          <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
+          <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              4</div>
+            <span class="text-[13px] lg:text-sm font-semibold text-muted">Pago</span>
+          </div>
+        </div>
+
+        <!-- Título Mobile -->
+        <h2 class="text-2xl font-extrabold text-text mb-6 lg:hidden">Contanos sobre tu celular</h2>
+
+        <!-- Grilla 2 Columnas (Formulario + Resumen) -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
+
+          <!-- Tarjeta Formulario -->
+          <div
+            class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+              <div class="form-group flex flex-col gap-1.5">
+                <label class="text-sm font-bold text-text">Marca</label>
+                <select
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary appearance-none cursor-pointer">
+                  <option>Samsung</option>
+                  <option>Apple</option>
+                  <option>Motorola</option>
+                  <option>Xiaomi</option>
+                </select>
+              </div>
+
+              <div class="form-group flex flex-col gap-1.5">
+                <label class="text-sm font-bold text-text">Modelo</label>
+                <input type="text"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-2 focus:border-primary font-medium"
+                  value="Galaxy A55">
+              </div>
+
+              <div class="form-group flex flex-col gap-1.5">
+                <label class="text-sm font-bold text-text">Valor del equipo</label>
+                <input type="text"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="$ 600.000">
+                <span class="text-[11px] text-muted">Entre $100.000 y $2.500.000</span>
+              </div>
+
+              <div class="form-group flex flex-col gap-1.5">
+                <label class="text-sm font-bold text-text">Antigüedad</label>
+                <div class="flex gap-2 overflow-x-auto pb-1 lg:pb-0">
+                  <button type="button"
+                    class="whitespace-nowrap px-4 py-2.5 rounded-full border-2 border-primary bg-primary-50 text-primary font-bold text-sm cursor-pointer">Menos
+                    de 1 año</button>
+                  <button type="button"
+                    class="whitespace-nowrap px-4 py-2.5 rounded-full border border-border bg-white text-text font-semibold text-sm hover:bg-gray-50 cursor-pointer">1
+                    a 2 años</button>
+                  <button type="button"
+                    class="whitespace-nowrap px-4 py-2.5 rounded-full border border-border bg-white text-text font-semibold text-sm hover:bg-gray-50 cursor-pointer">+2
+                    años</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Botón Submit Desktop -->
+            <div class="mt-8 pt-6 border-t border-border hidden lg:flex justify-end">
+              <button type="button"
+                class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Ver
+                planes</button>
+            </div>
+          </div>
+
+          <!-- Tarjeta Resumen (Solo Desktop) -->
+          <div
+            class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
+            <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
+            <div class="flex flex-col gap-3 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Seguro</span>
+                <span class="font-bold text-text">Celular</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Equipo</span>
+                <span class="font-bold text-text">Samsung Galaxy A55</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Valor</span>
+                <span class="font-bold text-text">$ 600.000</span>
+              </div>
+            </div>
+            <hr class="my-5 border-border">
+            <p class="text-xs text-muted mb-4 leading-relaxed">Completá los datos del equipo para ver el precio.</p>
+            <div class="flex items-center gap-2 text-xs font-semibold">
+              <div class="min-w-[16px] text-success">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span class="text-muted font-normal">Contratación 100% online · cancelás cuando quieras</span>
+            </div>
+          </div>
+
+          <!-- Footer Botón Mobile -->
+          <footer class="p-4 mt-auto lg:hidden w-full bg-bg">
+            <button type="button"
+              class="btn w-full flex items-center justify-center text-base font-semibold cursor-pointer">Ver
+              planes</button>
+          </footer>
+    </section>
+
   </main>
 </body>
+
 </html>
