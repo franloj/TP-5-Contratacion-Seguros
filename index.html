@@ -5,12 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cubrí Seguros</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Colores para que Tailwind los detecte vía CDN -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #4F46E5;
+      --color-primary-700: #3730A3;
+      --color-primary-50: #EEF2FF;
+      --color-success: #059669;
+      --color-error: #DC2626;
+      --color-text: #0F172A;
+      --color-muted: #64748B;
+      --color-border: #E2E8F0;
+      --color-bg: #F5F7FB;
+    }
+  </style>
+
   <link rel="stylesheet" href="css/tokens.css">
   <script type="module" src="js/app.js"></script>
 </head>
-<body class="bg-bg text-text min-h-screen">
-  <main id="app-container" class="max-w-7xl mx-auto">
+<body class="bg-bg text-text min-h-screen font-sans">
+  <main id="app-container">
+    
+    <section data-paso="0" class="flex flex-col min-h-screen lg:block lg:min-h-0">
+      
+      <header class="flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+        
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <div class="flex-1 p-4 lg:p-12 lg:grid lg:gap-12 lg:grid-cols-2 lg:items-center lg:max-w-7xl lg:mx-auto">
+        
+        <div class="mb-6 lg:mb-0 lg:flex lg:flex-col lg:items-start lg:gap-6">
+          <div class="hidden lg:inline-flex items-center gap-2 bg-green-100/50 px-3 py-1.5 rounded-full mb-2">
+            <span class="text-success font-bold text-xs uppercase tracking-wide">Primer mes con 20% OFF</span>
+          </div>
+
+          <h1 class="text-[32px] leading-9 lg:text-5xl lg:leading-[1.1] font-extrabold text-text mb-3 lg:mb-0">Protegé lo que más usás en menos de 3 minutos</h1>
+          
+          <p class="text-muted text-base lg:text-lg mb-6 lg:mb-0">
+            Elegí qué querés asegurar. Cotizás al instante y contratás 100% online. <span class="hidden lg:inline">Sin papeles ni llamadas.</span>
+          </p>
+          
+          <button type="button" class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Cotizar ahora</button>
+        </div>
+        
+        <div class="flex flex-col gap-4">
+          <div class="grid grid-cols-2 gap-4 lg:gap-6">
+            
+            <button type="button" id="btn-producto-celular" class="card p-5 lg:p-6 flex flex-col items-start gap-4 border-2 border-primary bg-white rounded-[var(--radius)] cursor-pointer text-left transition-colors hover:shadow-md">
+              <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
+                <img src="img/Celular.svg" alt="Celular" class="w-6 h-6">
+              </div>
+              <div>
+                <span class="font-bold text-text block text-lg">Celular</span>
+                <span class="text-xs text-muted block mt-1">Robo, rotura y pérdida</span>
+              </div>
+            </button>
+
+            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+              <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
+                <img src="img/hogar.svg" alt="Hogar" class="w-6 h-6">
+              </div>
+              <div>
+                <span class="font-bold text-text block text-lg">Hogar</span>
+                <span class="badge mt-1 text-[10px]" data-variant="secondary">Próximamente</span>
+              </div>
+            </div>
+
+            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+              <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
+                <img src="img/bicicleta.svg" alt="Bicicleta" class="w-6 h-6">
+              </div>
+              <div>
+                <span class="font-bold text-text block text-lg">Bicicleta</span>
+                <span class="badge mt-1 text-[10px]" data-variant="secondary">Próximamente</span>
+              </div>
+            </div>
+
+            <div class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border bg-white rounded-[var(--radius)] opacity-70">
+              <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
+                <img src="img/Frame.svg" alt="Viaje" class="w-6 h-6">
+              </div>
+              <div>
+                <span class="font-bold text-text block text-lg">Viaje</span>
+                <span class="badge mt-1 text-[10px]" data-variant="secondary">Próximamente</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] mt-2 lg:hidden">
+            <span class="badge text-success bg-green-100 border-none font-bold text-[10px] px-2 py-1 tracking-wide">NUEVO</span>
+            <span class="text-xs text-muted">Primer mes con 20% OFF en todos los planes</span>
+          </div>
+        </div>
+        
+        <div class="hidden lg:grid grid-cols-3 gap-6 col-span-2 mt-8">
+          <div class="card p-5 border border-border bg-white rounded-[var(--radius)] flex flex-col gap-1">
+            <span class="font-bold text-sm text-text">100% online</span>
+            <span class="text-xs text-muted">Cotizás y contratás desde la web</span>
+          </div>
+          <div class="card p-5 border border-border bg-white rounded-[var(--radius)] flex flex-col gap-1">
+            <span class="font-bold text-sm text-text">Póliza al instante</span>
+            <span class="text-xs text-muted">La recibís por email al confirmar</span>
+          </div>
+          <div class="card p-5 border border-border bg-white rounded-[var(--radius)] flex flex-col gap-1">
+            <span class="font-bold text-sm text-text">Sin permanencia</span>
+            <span class="text-xs text-muted">Cancelás cuando quieras</span>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="p-4 mt-auto lg:hidden w-full bg-bg">
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Cotizar seguro de Celular</button>
+      </footer>
+
+    </section>
+
   </main>
 </body>
 </html>
