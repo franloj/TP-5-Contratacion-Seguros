@@ -22,6 +22,10 @@
       --color-border: #E2E8F0;
       --color-bg: #F5F7FB;
     }
+
+    /* Forzamos la creación de las clases de borde y texto para que JS las pueda usar */
+    .border-primary { border-color: var(--color-primary); }
+    .text-primary { color: var(--color-primary); }
   </style>
 
   <link rel="stylesheet" href="css/tokens.css">
@@ -30,8 +34,8 @@
 
 <body class="bg-bg text-text min-h-screen font-sans">
   <main id="app-container">
-
-    <section data-paso="0" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0">
+    <!-- PANTALLA 01: COTIZAR (Paso 0) -->
+    <section data-paso="0" class="flex flex-col min-h-screen lg:block lg:min-h-0">
 
       <header
         class="flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
@@ -63,7 +67,8 @@
               papeles ni llamadas.</span>
           </p>
 
-          <button type="button"
+          <!--ACÁ SUMAMOS EL ID: btn-cotizar-desktop -->
+          <button type="button" id="btn-cotizar-desktop"
             class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Cotizar
             ahora</button>
         </div>
@@ -71,6 +76,7 @@
         <div class="flex flex-col gap-4">
           <div class="grid grid-cols-2 gap-4 lg:gap-6">
 
+            <!-- (Este ya lo tenías bien puesto, lo dejamos igual) -->
             <button type="button" id="btn-producto-celular"
               class="card p-5 lg:p-6 flex flex-col items-start gap-4 border border-border opacity-70 bg-white rounded-[var(--radius)] cursor-pointer text-left transition-colors hover:shadow-md">
               <div class="bg-primary-50 text-primary p-2.5 rounded-lg flex items-center justify-center">
@@ -143,18 +149,19 @@
       </div>
 
       <footer class="p-4 mt-auto lg:hidden w-full bg-bg">
-        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Cotizar seguro de
+        <!--SUMAMOS EL ID: btn-cotizar-mobile -->
+        <button type="button" id="btn-cotizar-mobile"
+          class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Cotizar seguro de
           Celular</button>
       </footer>
 
     </section>
-
-    <!-- PANTALLA 02: COTIZAR (Paso 1) -->
+<!-- PANTALLA 02: COTIZAR (Paso 1) -->
     <section data-paso="1" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
-        <button class="text-primary p-1 border border-border rounded-md">
+        <button type="button" class="text-primary p-1 border border-border rounded-md cursor-pointer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -174,7 +181,7 @@
           <a href="#" class="hover:text-text transition-colors">Seguros</a>
           <a href="#" class="hover:text-text transition-colors">Siniestros</a>
           <a href="#" class="hover:text-text transition-colors">Ayuda</a>
-          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+          <button type="button" class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
         </nav>
       </header>
 
@@ -187,7 +194,6 @@
           <h2 class="text-3xl font-extrabold text-text">Contanos sobre tu celular</h2>
         </div>
 
-        <!-- Stepper (Indicador de pasos) -->
         <!-- Stepper (Indicador de pasos) -->
         <div
           class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
@@ -226,7 +232,7 @@
         <!-- Grilla 2 Columnas (Formulario + Resumen) -->
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
 
-          <!-- Tarjeta Formulario -->
+          <!-- Columna 1: Tarjeta Formulario -->
           <div
             class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -235,6 +241,7 @@
                 <label class="text-sm font-bold text-text">Marca</label>
                 <select
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary appearance-none cursor-pointer">
+                  <option value="" disabled selected>Elegí una marca</option>
                   <option>Samsung</option>
                   <option>Apple</option>
                   <option>Motorola</option>
@@ -246,22 +253,22 @@
                 <label class="text-sm font-bold text-text">Modelo</label>
                 <input type="text"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-2 focus:border-primary font-medium"
-                  value="Galaxy A55">
+                  placeholder="Ej: Galaxy A55">
               </div>
 
               <div class="form-group flex flex-col gap-1.5">
                 <label class="text-sm font-bold text-text">Valor del equipo</label>
                 <input type="text"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="$ 600.000">
-                <span class="text-[11px] text-muted">Entre $100.000 y $2.500.000</span>
+                  placeholder="Ej: $ 600.000">
+                <span class="text-[11px] text-muted transition-colors">Entre $100.000 y $2.500.000</span>
               </div>
 
               <div class="form-group flex flex-col gap-1.5">
                 <label class="text-sm font-bold text-text">Antigüedad</label>
                 <div class="flex gap-2 overflow-x-auto pb-1 lg:pb-0">
                   <button type="button"
-                    class="whitespace-nowrap px-4 py-2.5 rounded-full border-2 border-primary bg-primary-50 text-primary font-bold text-sm cursor-pointer">Menos
+                    class="whitespace-nowrap px-4 py-2.5 rounded-full border border-border bg-white text-text font-semibold text-sm hover:bg-gray-50 cursor-pointer">Menos
                     de 1 año</button>
                   <button type="button"
                     class="whitespace-nowrap px-4 py-2.5 rounded-full border border-border bg-white text-text font-semibold text-sm hover:bg-gray-50 cursor-pointer">1
@@ -274,51 +281,59 @@
 
             </div>
 
-            <!-- Botón Submit Desktop -->
-            <div class="mt-8 pt-6 border-t border-border hidden lg:flex justify-end">
+            <!-- Botones Desktop (Pantalla 02) -->
+            <div class="mt-8 pt-6 border-t border-border hidden lg:flex justify-between items-center">
               <button type="button"
-                class="btn hidden lg:inline-flex items-center justify-center px-8 text-base w-auto cursor-pointer">Ver
-                planes</button>
+                class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 py-3 rounded-[var(--radius)] text-base font-semibold cursor-pointer transition-colors">Volver</button>
+              
+              <!-- ACÁ ESTÁ EL ID Y EL BLOQUEO POR DEFECTO -->
+              <button type="button" id="btn-planes-desktop" disabled
+                class="btn lg:inline-flex items-center justify-center px-8 text-base w-auto opacity-50 cursor-not-allowed transition-colors">Ver planes</button>
             </div>
-          </div>
 
-          <!-- Tarjeta Resumen (Solo Desktop) -->
-          <div
-            class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
-            <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
-            <div class="flex flex-col gap-3 text-sm">
-              <div class="flex justify-between items-center">
-                <span class="text-muted">Seguro</span>
-                <span class="font-bold text-text">Celular</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-muted">Equipo</span>
-                <span class="font-bold text-text">Samsung Galaxy A55</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-muted">Valor</span>
-                <span class="font-bold text-text">$ 600.000</span>
-              </div>
-            </div>
-            <hr class="my-5 border-border">
-            <p class="text-xs text-muted mb-4 leading-relaxed">Completá los datos del equipo para ver el precio.</p>
-            <div class="flex items-center gap-2 text-xs font-semibold">
-              <div class="min-w-[16px] text-success">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <span class="text-muted font-normal">Contratación 100% online · cancelás cuando quieras</span>
-            </div>
-          </div>
+          </div> <!-- CIERRE TARJETA FORMULARIO -->
 
-          <!-- Footer Botón Mobile -->
-          <footer class="p-4 mt-auto lg:hidden w-full bg-bg">
-            <button type="button"
-              class="btn w-full flex items-center justify-center text-base font-semibold cursor-pointer">Ver
-              planes</button>
-          </footer>
+          <!-- Columna 2: Tarjeta Resumen (Desktop) -->
+          <div class="hidden lg:block">
+            <div class="bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm">
+              <h3 class="font-extrabold text-xl mb-4 text-text">Resumen</h3>
+
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-muted">Seguro</span>
+                <span class="font-bold text-sm text-text">Celular</span>
+              </div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-muted">Equipo</span>
+                <span id="resumen-equipo" class="font-bold text-sm text-text">-</span>
+              </div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-sm text-muted">Valor</span>
+                <span id="resumen-valor" class="font-bold text-sm text-text">-</span>
+              </div>
+
+              <div class="pt-4 border-t border-border flex flex-col gap-3">
+                <p class="text-xs text-muted">Completá los datos del equipo para ver el precio.</p>
+                <div class="flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    class="text-success shrink-0">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span class="text-xs text-muted">Contratación 100% online · cancelás cuando quieras</span>
+                </div>
+              </div>
+            </div>
+          </div> <!-- CIERRE COLUMNA RESUMEN -->
+
+        </div> <!-- CIERRE GRILLA 2 COLUMNAS -->
+      </div> <!-- CIERRE CONTENEDOR PRINCIPAL -->
+
+      <!-- Footer Botón Mobile -->
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <!-- ACÁ ESTÁ EL ID Y EL BLOQUEO POR DEFECTO -->
+        <button type="button" id="btn-planes-mobile" disabled class="btn w-full py-3.5 text-base font-semibold opacity-50 cursor-not-allowed transition-colors">Ver planes</button>
+      </footer>
+
     </section>
 
     <!-- PANTALLA 03: ELEGIR PLAN (Paso 2) -->
@@ -326,7 +341,7 @@
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
-        <button class="text-text p-1 cursor-pointer">
+        <button type="button" class="text-text p-1 cursor-pointer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -346,7 +361,7 @@
           <a href="#" class="hover:text-text transition-colors">Seguros</a>
           <a href="#" class="hover:text-text transition-colors">Siniestros</a>
           <a href="#" class="hover:text-text transition-colors">Ayuda</a>
-          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+          <button type="button" class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
         </nav>
       </header>
 
@@ -413,7 +428,7 @@
 
               <!-- Plan Básico (Inactivo) -->
               <label
-                class="card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
+                class="tarjeta-plan card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
                 <div class="flex justify-between items-start">
                   <span class="font-extrabold text-lg text-text">Básico</span>
                   <div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center"></div>
@@ -451,7 +466,7 @@
 
               <!-- Plan Plus (Activo - Seleccionado) -->
               <label
-                class="card relative p-5 lg:p-6 flex flex-col gap-4 border-2 border-primary bg-white rounded-[var(--radius)] cursor-pointer shadow-sm">
+                class="tarjeta-plan card relative p-5 lg:p-6 flex flex-col gap-4 border-2 border-primary bg-white rounded-[var(--radius)] cursor-pointer shadow-sm bg-primary-50/10">
                 <div class="flex justify-between items-start">
                   <div class="flex items-center gap-2">
                     <span class="font-extrabold text-lg text-text">Plus</span>
@@ -492,7 +507,7 @@
 
               <!-- Plan Premium (Inactivo) -->
               <label
-                class="card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
+                class="tarjeta-plan card relative p-5 lg:p-6 flex flex-col gap-4 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:shadow-sm transition-shadow">
                 <div class="flex justify-between items-start">
                   <span class="font-extrabold text-lg text-text">Premium</span>
                   <div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center"></div>
@@ -548,11 +563,11 @@
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Equipo</span>
-                <span class="font-bold text-text">Samsung Galaxy A55</span>
+                <span id="resumen-equipo-p3" class="font-bold text-text">Samsung Galaxy A55</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Plan</span>
-                <span class="font-bold text-text">Plus</span>
+                <span id="resumen-plan-p3" class="font-bold text-text">Plus</span>
               </div>
             </div>
 
@@ -560,7 +575,7 @@
 
             <div class="flex justify-between items-center mb-5">
               <span class="text-sm text-muted">Total mensual</span>
-              <span class="text-lg font-extrabold text-text">$ 3.000</span>
+              <span id="resumen-total-p3" class="text-lg font-extrabold text-text">$ 3.000</span>
             </div>
 
             <div class="flex items-center gap-2 text-xs font-semibold">
@@ -581,8 +596,8 @@
       <footer
         class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         <div class="flex justify-between items-center px-1">
-          <span class="text-sm text-muted">Plan Plus · Galaxy A55</span>
-          <span class="text-sm font-extrabold text-text">$ 3.000/mes</span>
+          <span id="resumen-mobile-texto-p3" class="text-sm text-muted">Plan Plus · Galaxy A55</span>
+          <span id="resumen-mobile-precio-p3" class="text-sm font-extrabold text-text">$ 3.000/mes</span>
         </div>
         <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Continuar</button>
       </footer>
@@ -593,7 +608,7 @@
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
-        <button class="text-text p-1 cursor-pointer">
+        <button type="button" class="text-text p-1 cursor-pointer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -613,14 +628,13 @@
           <a href="#" class="hover:text-text transition-colors">Seguros</a>
           <a href="#" class="hover:text-text transition-colors">Siniestros</a>
           <a href="#" class="hover:text-text transition-colors">Ayuda</a>
-          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+          <button type="button" class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
         </nav>
       </header>
 
       <!-- Contenedor Principal -->
       <div class="flex-1 p-4 lg:p-12 lg:max-w-7xl lg:mx-auto w-full">
 
-        <!-- Títulos Desktop -->
         <div class="hidden lg:block mb-6">
           <span class="text-sm text-primary font-bold block mb-1">Seguro de Celular</span>
           <h2 class="text-3xl font-extrabold text-text">Tus datos</h2>
@@ -629,7 +643,6 @@
         <!-- Stepper -->
         <div
           class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
-          <!-- Paso 1 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
             <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
@@ -640,7 +653,6 @@
             <span class="text-[13px] lg:text-sm font-bold text-success">Cotizar</span>
           </div>
           <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
-          <!-- Paso 2 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
             <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
@@ -651,7 +663,6 @@
             <span class="text-[13px] lg:text-sm font-bold text-success">Plan</span>
           </div>
           <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
-          <!-- Paso 3 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
             <div
               class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
@@ -659,7 +670,6 @@
             <span class="text-[13px] lg:text-sm font-bold text-primary">Datos</span>
           </div>
           <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
-          <!-- Paso 4 -->
           <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
             <div
               class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
@@ -668,70 +678,60 @@
           </div>
         </div>
 
-        <!-- Título Mobile -->
         <h2 class="text-2xl font-extrabold text-text mb-6 lg:hidden">Tus datos</h2>
 
-        <!-- Grilla Principal -->
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
 
           <!-- Formulario Datos -->
           <div
             class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
 
-            <!-- Grilla 2 columnas mobile, 3 columnas desktop -->
             <form class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="nombre" class="text-sm font-bold text-text">Nombre</label>
-                <input type="text" id="nombre"
+                <input type="text" id="nombre" maxlength="40"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="Juan">
+                  placeholder="Ej: Juan">
               </div>
 
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="apellido" class="text-sm font-bold text-text">Apellido</label>
-                <input type="text" id="apellido"
+                <input type="text" id="apellido" maxlength="40"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="Pérez">
+                  placeholder="Ej: Pérez">
               </div>
 
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="dni" class="text-sm font-bold text-text">DNI</label>
-                <input type="text" id="dni"
+                <input type="text" id="dni" maxlength="8"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="30123456">
+                  placeholder="Ej: 30123456">
               </div>
 
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="nacimiento" class="text-sm font-bold text-text">Nacimiento</label>
-                <input type="text" id="nacimiento"
+                <input type="text" id="nacimiento" maxlength="10"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  placeholder="dd/mm/aaaa">
+                  placeholder="DD/MM/AAAA">
               </div>
 
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="email" class="text-sm font-bold text-text">Email</label>
                 <input type="email" id="email"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="juan.perez@gmail.com">
+                  placeholder="Ej: juan.perez@gmail.com">
               </div>
 
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="celular" class="text-sm font-bold text-text">Celular</label>
-                <input type="tel" id="celular"
+                <input type="tel" id="celular" maxlength="15"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="11 5555-1234">
+                  placeholder="Ej: 11 5555-1234">
               </div>
 
-              <!-- Checkbox Términos -->
               <div class="col-span-2 lg:col-span-3 flex items-start gap-3 mt-2">
-                <div class="w-5 h-5 mt-0.5 rounded bg-primary flex items-center justify-center shrink-0 cursor-pointer">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <input type="checkbox" id="terminos" class="hidden" checked>
+                <input type="checkbox" id="terminos"
+                  class="w-5 h-5 mt-0.5 rounded border-2 border-primary text-primary focus:ring-primary cursor-pointer accent-primary">
                 <label for="terminos" class="text-sm text-muted cursor-pointer leading-relaxed">
                   Acepto los términos y condiciones y la política de privacidad.
                 </label>
@@ -744,15 +744,16 @@
                 class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
 
               <div class="flex items-center gap-4">
-                <span class="text-[13px] font-medium text-muted">Completá los campos con error para continuar</span>
-                <button type="button" disabled
-                  class="btn bg-slate-200 text-slate-400 font-semibold px-8 py-3 rounded-[var(--radius)] text-base w-auto cursor-not-allowed">Continuar
-                  al pago</button>
+                <span id="texto-error-p4" class="text-[13px] font-medium text-muted transition-opacity">Completá los
+                  campos con error para continuar</span>
+                <button id="btn-continuar-p4" type="button"
+                  class="btn bg-primary text-white font-semibold px-8 py-3 rounded-[var(--radius)] text-base w-auto opacity-50 cursor-not-allowed transition-all"
+                  disabled>Continuar al pago</button>
               </div>
             </div>
           </div>
 
-          <!-- Columna Derecha: Tarjeta Resumen (Desktop) -->
+          <!-- Columna Derecha: Tarjeta Resumen -->
           <div
             class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
             <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
@@ -763,17 +764,17 @@
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Equipo</span>
-                <span class="font-bold text-text">Samsung Galaxy A55</span>
+                <span id="resumen-equipo-p4" class="font-bold text-text">Samsung Galaxy A55</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Plan</span>
-                <span class="font-bold text-text">Plus</span>
+                <span id="resumen-plan-p4" class="font-bold text-text">Plus</span>
               </div>
             </div>
             <hr class="my-5 border-border">
             <div class="flex justify-between items-center mb-5">
               <span class="text-sm text-muted">Total mensual</span>
-              <span class="text-lg font-extrabold text-text">$ 3.000</span>
+              <span id="resumen-total-p4" class="text-lg font-extrabold text-text">$ 3.000</span>
             </div>
             <div class="flex items-center gap-2 text-xs font-semibold">
               <div class="min-w-[16px] text-success">
@@ -792,11 +793,11 @@
       <!-- Footer Mobile -->
       <footer
         class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-        <button type="button" disabled
-          class="btn w-full py-3.5 text-base font-semibold bg-slate-200 text-slate-400 cursor-not-allowed">Continuar al
-          pago</button>
-        <span class="text-[11px] text-center text-muted font-medium">El botón se habilita cuando el formulario es
-          válido</span>
+        <button id="btn-continuar-mobile-p4" type="button"
+          class="btn w-full py-3.5 text-base font-semibold bg-primary text-white opacity-50 cursor-not-allowed transition-all"
+          disabled>Continuar al pago</button>
+        <span id="texto-error-mobile-p4" class="text-[11px] text-center text-muted font-medium transition-colors">El
+          botón se habilita cuando el formulario es válido</span>
       </footer>
 
     </section>
@@ -900,38 +901,39 @@
               class="lg:hidden bg-primary-50/70 border border-indigo-200/80 rounded-[var(--radius)] p-4 flex flex-col gap-2.5 text-sm">
               <div class="flex justify-between items-center">
                 <span class="text-muted">Seguro</span>
-                <span class="font-bold text-text">Celular · Plan Plus</span>
+                <span id="resumen-seguro-mobile-p5" class="font-bold text-text">Celular · Plan Plus</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Equipo</span>
-                <span class="font-bold text-text">Samsung Galaxy A55</span>
+                <span id="resumen-equipo-mobile-p5" class="font-bold text-text">Samsung Galaxy A55</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Titular</span>
-                <span class="font-bold text-text">Juan Pérez</span>
+                <span id="resumen-titular-mobile-p5" class="font-bold text-text truncate max-w-[150px]">Juan
+                  Pérez</span>
               </div>
               <hr class="my-1 border-indigo-200/80">
               <div class="flex justify-between items-center">
                 <span class="text-muted">Total mensual</span>
-                <span class="text-base font-extrabold text-text">$ 3.000</span>
+                <span id="resumen-total-mobile-p5" class="text-base font-extrabold text-text">$ 3.000</span>
               </div>
             </div>
 
-            <!-- Selección de Medio de Pago (Ambos deseleccionados inicialmente) -->
+            <!-- Selección de Medio de Pago -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
               <!-- Tarjeta de crédito -->
               <label
-                class="p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
+                class="opcion-tarjeta p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
                 <input type="radio" name="metodo-pago" value="credito" class="hidden">
-                <div class="w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
+                <div class="indicador-radio w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
                 <span class="font-bold text-sm text-text">Tarjeta de crédito</span>
               </label>
 
               <!-- Tarjeta de débito -->
               <label
-                class="p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
+                class="opcion-tarjeta p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
                 <input type="radio" name="metodo-pago" value="debito" class="hidden">
-                <div class="w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
+                <div class="indicador-radio w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
                 <span class="font-bold text-sm text-text">Tarjeta de débito</span>
               </label>
             </div>
@@ -941,33 +943,33 @@
               <!-- Número de tarjeta -->
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="numero-tarjeta" class="text-sm font-bold text-text">Número de tarjeta</label>
-                <input type="text" id="numero-tarjeta"
+                <input type="text" id="numero-tarjeta" maxlength="19"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="4111 1111 1111 1111">
+                  placeholder="0000 0000 0000 0000">
               </div>
 
-              <!-- Titular de la tarjeta (Exigido por el TP) -->
+              <!-- Titular de la tarjeta -->
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="titular-tarjeta" class="text-sm font-bold text-text">Titular</label>
-                <input type="text" id="titular-tarjeta"
+                <input type="text" id="titular-tarjeta" maxlength="40"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium uppercase"
-                  value="JUAN PEREZ">
+                  placeholder="EJ: JUAN PEREZ">
               </div>
 
               <!-- Vencimiento -->
               <div class="col-span-1 form-group flex flex-col gap-1.5">
-                <label for="vencimiento" class="text-sm font-bold text-text">Vencimiento</label>
-                <input type="text" id="vencimiento"
+                <label for="vencimiento-tarjeta" class="text-sm font-bold text-text">Vencimiento</label>
+                <input type="text" id="vencimiento-tarjeta" maxlength="5"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
-                  value="12/28">
+                  placeholder="MM/AA">
               </div>
 
               <!-- CVV -->
               <div class="col-span-1 form-group flex flex-col gap-1.5">
-                <label for="cvv" class="text-sm font-bold text-text">CVV</label>
-                <input type="password" id="cvv" maxlength="3"
+                <label for="cvv-tarjeta" class="text-sm font-bold text-text">CVV</label>
+                <input type="password" id="cvv-tarjeta" maxlength="3"
                   class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium tracking-widest"
-                  value="123">
+                  placeholder="•••">
               </div>
             </form>
 
@@ -983,7 +985,14 @@
             <div class="mt-4 pt-6 border-t border-border hidden lg:flex justify-between items-center">
               <button type="button"
                 class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
-              <button type="button" class="btn px-8 text-base w-auto cursor-pointer">Pagar y contratar</button>
+
+              <div class="flex items-center gap-4">
+                <span id="texto-error-p5" class="text-[13px] font-medium text-muted transition-opacity">Completá la
+                  tarjeta para continuar</span>
+                <button id="btn-pagar-p5" type="button"
+                  class="btn bg-primary text-white font-semibold px-8 py-3 rounded-[var(--radius)] text-base w-auto opacity-50 cursor-not-allowed transition-all"
+                  disabled>Pagar y contratar</button>
+              </div>
             </div>
 
           </div>
@@ -999,15 +1008,15 @@
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Equipo</span>
-                <span class="font-bold text-text">Samsung Galaxy A55</span>
+                <span id="resumen-equipo-p5" class="font-bold text-text">Samsung Galaxy A55</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Plan</span>
-                <span class="font-bold text-text">Plus</span>
+                <span id="resumen-plan-p5" class="font-bold text-text">Plus</span>
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-muted">Titular</span>
-                <span class="font-bold text-text">Juan Pérez</span>
+                <span id="resumen-titular-p5" class="font-bold text-text truncate max-w-[150px]">-</span>
               </div>
             </div>
 
@@ -1015,7 +1024,7 @@
 
             <div class="flex justify-between items-center mb-5">
               <span class="text-sm text-muted">Total mensual</span>
-              <span class="text-lg font-extrabold text-text">$ 3.000</span>
+              <span id="resumen-total-p5" class="text-lg font-extrabold text-text">$ 3.000</span>
             </div>
 
             <div class="flex items-center gap-2 text-xs font-semibold">
@@ -1034,9 +1043,14 @@
 
       <!-- Footer Mobile -->
       <footer
-        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Pagar y
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button id="btn-pagar-mobile-p5" type="button"
+          class="btn w-full py-3.5 text-base font-semibold bg-primary text-white opacity-50 cursor-not-allowed transition-all"
+          disabled>Pagar y
           contratar</button>
+        <span id="texto-error-mobile-p5"
+          class="text-[11px] text-center text-muted font-medium transition-colors">Completá los datos de la
+          tarjeta</span>
       </footer>
 
     </section>
@@ -1076,10 +1090,10 @@
           </div>
 
           <!-- Títulos y Mensaje -->
-          <h1 class="text-[28px] leading-tight lg:text-3xl font-extrabold text-text mb-2">
+          <h1 id="exito-titulo" class="text-[28px] leading-tight lg:text-3xl font-extrabold text-text mb-2">
             ¡Listo, Juan!<br>Tu celular ya está protegido
           </h1>
-          <p class="text-sm lg:text-base text-muted mb-6">
+          <p id="exito-email" class="text-sm lg:text-base text-muted mb-6">
             Te enviamos la póliza a juan.perez@mail.com
           </p>
 
@@ -1094,19 +1108,19 @@
             class="w-full bg-white border border-border rounded-[var(--radius)] p-5 flex flex-col gap-3 text-sm mb-8 lg:mb-10 text-left">
             <div class="flex justify-between items-center">
               <span class="text-muted">Plan</span>
-              <span class="font-bold text-text">Plus</span>
+              <span id="exito-plan" class="font-bold text-text">Plus</span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-muted">Equipo</span>
-              <span class="font-bold text-text">Samsung Galaxy A55</span>
+              <span id="exito-equipo" class="font-bold text-text">Samsung Galaxy A55</span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-muted">Vigencia desde</span>
-              <span class="font-bold text-text">23/10/2026</span>
+              <span id="exito-fecha" class="font-bold text-text">23/10/2026</span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-muted">Cuota mensual</span>
-              <span class="font-bold text-text">$ 3.000</span>
+              <span id="exito-precio" class="font-bold text-text">$ 3.000</span>
             </div>
           </div>
 
@@ -1134,7 +1148,7 @@
     </section>
 
     <!-- PANTALLA 07: ERROR DE PAGO (Paso 6) -->
-    <section data-paso="6" class="flex flex-col min-h-screen bg-bg">
+    <section data-paso="6" hidden class="flex flex-col min-h-screen bg-bg">
 
       <!-- Header (Solo Desktop) -->
       <header
