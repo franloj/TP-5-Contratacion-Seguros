@@ -34,7 +34,20 @@ Al utilizar la opción "sin build" (CDN) para Tailwind y Basecoat UI, no es nece
 
 ### Versión Desktop (1440px)
 
-
+![Pantalla 1 - Inicio](capturas/desktop/pantalla1desktop.png)
+![Pantalla 2 - Cotizar](capturas/desktop/pantalla2desktop.png)
+![Pantalla 3 - Elegir Plan](capturas/desktop/pantalla3desktop.png)
+![Pantalla 4 - Datos Personales](capturas/desktop/pantalla4desktop.png)
+![Pantalla 5 - Pago](capturas/desktop/pantalla5desktop.png)
+![Pantalla 6 - Éxito](capturas/desktop/pantalla6desktop.png)
+![Pantalla 7 - Error](capturas/desktop/pantalla7desktop.png)
 
 ### Versión Mobile (390px)
 
+![Pantalla 1 - Inicio Mobile](capturas/mobile/pantalla1mobile.png)
+![Pantalla 2 - Cotizar Mobile](capturas/mobile/pantalla2mobile.png)
+![Pantalla 3 - Elegir Plan Mobile](capturas/mobile/pantalla3mobile.png)
+![Pantalla 4 - Datos Personales Mobile](capturas/mobile/pantalla4mobile.png)
+![Pantalla 5 - Pago Mobile](capturas/mobile/pantalla5mobile.png)
+![Pantalla 6 - Éxito Mobile](capturas/mobile/pantalla6mobile.png)
+![Pantalla 7 - Error Mobile](capturas/mobile/pantalla7mobile.png)
