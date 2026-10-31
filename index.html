@@ -594,7 +594,8 @@
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
         <button class="text-text p-1 cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
@@ -602,7 +603,8 @@
       </header>
 
       <!-- Header Desktop -->
-      <header class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
         <div class="flex items-center gap-2">
           <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
           <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
@@ -625,11 +627,15 @@
         </div>
 
         <!-- Stepper -->
-        <div class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
+        <div
+          class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
           <!-- Paso 1 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
             <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
             </div>
             <span class="text-[13px] lg:text-sm font-bold text-success">Cotizar</span>
           </div>
@@ -637,20 +643,27 @@
           <!-- Paso 2 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
             <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
             </div>
             <span class="text-[13px] lg:text-sm font-bold text-success">Plan</span>
           </div>
           <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
           <!-- Paso 3 -->
           <div class="flex items-center gap-1.5 lg:gap-2">
-            <div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">3</div>
+            <div
+              class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
+              3</div>
             <span class="text-[13px] lg:text-sm font-bold text-primary">Datos</span>
           </div>
           <div class="h-px bg-border flex-1 mx-2 lg:mx-4"></div>
           <!-- Paso 4 -->
           <div class="flex items-center gap-1.5 lg:gap-2 opacity-50">
-            <div class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">4</div>
+            <div
+              class="w-6 h-6 rounded-full border-2 border-muted text-muted flex items-center justify-center text-xs font-bold shrink-0">
+              4</div>
             <span class="text-[13px] lg:text-sm font-semibold text-muted">Pago</span>
           </div>
         </div>
@@ -662,45 +675,61 @@
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
 
           <!-- Formulario Datos -->
-          <div class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
-            
+          <div
+            class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm">
+
             <!-- Grilla 2 columnas mobile, 3 columnas desktop -->
             <form class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-              
+
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="nombre" class="text-sm font-bold text-text">Nombre</label>
-                <input type="text" id="nombre" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" value="Juan">
+                <input type="text" id="nombre"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="Juan">
               </div>
-              
+
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="apellido" class="text-sm font-bold text-text">Apellido</label>
-                <input type="text" id="apellido" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" value="Pérez">
+                <input type="text" id="apellido"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="Pérez">
               </div>
 
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="dni" class="text-sm font-bold text-text">DNI</label>
-                <input type="text" id="dni" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" value="30123456">
+                <input type="text" id="dni"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="30123456">
               </div>
-              
+
               <div class="col-span-1 form-group flex flex-col gap-1.5">
                 <label for="nacimiento" class="text-sm font-bold text-text">Nacimiento</label>
-                <input type="text" id="nacimiento" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" placeholder="dd/mm/aaaa">
+                <input type="text" id="nacimiento"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  placeholder="dd/mm/aaaa">
               </div>
-              
+
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="email" class="text-sm font-bold text-text">Email</label>
-                <input type="email" id="email" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" value="juan.perez@gmail.com">
+                <input type="email" id="email"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="juan.perez@gmail.com">
               </div>
 
               <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
                 <label for="celular" class="text-sm font-bold text-text">Celular</label>
-                <input type="tel" id="celular" class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium" value="11 5555-1234">
+                <input type="tel" id="celular"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="11 5555-1234">
               </div>
 
               <!-- Checkbox Términos -->
               <div class="col-span-2 lg:col-span-3 flex items-start gap-3 mt-2">
                 <div class="w-5 h-5 mt-0.5 rounded bg-primary flex items-center justify-center shrink-0 cursor-pointer">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                 </div>
                 <input type="checkbox" id="terminos" class="hidden" checked>
                 <label for="terminos" class="text-sm text-muted cursor-pointer leading-relaxed">
@@ -711,17 +740,21 @@
 
             <!-- Botones Desktop -->
             <div class="mt-10 pt-6 border-t border-border hidden lg:flex justify-between items-center">
-              <button type="button" class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
-              
+              <button type="button"
+                class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
+
               <div class="flex items-center gap-4">
                 <span class="text-[13px] font-medium text-muted">Completá los campos con error para continuar</span>
-                <button type="button" disabled class="btn bg-slate-200 text-slate-400 font-semibold px-8 py-3 rounded-[var(--radius)] text-base w-auto cursor-not-allowed">Continuar al pago</button>
+                <button type="button" disabled
+                  class="btn bg-slate-200 text-slate-400 font-semibold px-8 py-3 rounded-[var(--radius)] text-base w-auto cursor-not-allowed">Continuar
+                  al pago</button>
               </div>
             </div>
           </div>
 
           <!-- Columna Derecha: Tarjeta Resumen (Desktop) -->
-          <div class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
+          <div
+            class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
             <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
             <div class="flex flex-col gap-3 text-sm">
               <div class="flex justify-between items-center">
@@ -744,7 +777,8 @@
             </div>
             <div class="flex items-center gap-2 text-xs font-semibold">
               <div class="min-w-[16px] text-success">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
@@ -756,15 +790,19 @@
       </div>
 
       <!-- Footer Mobile -->
-      <footer class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-        <button type="button" disabled class="btn w-full py-3.5 text-base font-semibold bg-slate-200 text-slate-400 cursor-not-allowed">Continuar al pago</button>
-        <span class="text-[11px] text-center text-muted font-medium">El botón se habilita cuando el formulario es válido</span>
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button type="button" disabled
+          class="btn w-full py-3.5 text-base font-semibold bg-slate-200 text-slate-400 cursor-not-allowed">Continuar al
+          pago</button>
+        <span class="text-[11px] text-center text-muted font-medium">El botón se habilita cuando el formulario es
+          válido</span>
       </footer>
 
     </section>
 
-<!-- PANTALLA 05: PAGO (Paso 4) -->
-    <section data-paso="4" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+    <!-- PANTALLA 05: PAGO (Paso 4) -->
+    <section data-paso="4" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
@@ -858,7 +896,8 @@
             class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm flex flex-col gap-6">
 
             <!-- Resumen Compacto (Solo Mobile) -->
-            <div class="lg:hidden bg-primary-50/70 border border-indigo-200/80 rounded-[var(--radius)] p-4 flex flex-col gap-2.5 text-sm">
+            <div
+              class="lg:hidden bg-primary-50/70 border border-indigo-200/80 rounded-[var(--radius)] p-4 flex flex-col gap-2.5 text-sm">
               <div class="flex justify-between items-center">
                 <span class="text-muted">Seguro</span>
                 <span class="font-bold text-text">Celular · Plan Plus</span>
@@ -933,9 +972,11 @@
             </form>
 
             <!-- Aviso de Simulación -->
-            <div class="bg-amber-50 border border-amber-200/80 rounded-[var(--radius)] p-3.5 text-amber-800 text-xs font-medium leading-relaxed">
+            <div
+              class="bg-amber-50 border border-amber-200/80 rounded-[var(--radius)] p-3.5 text-amber-800 text-xs font-medium leading-relaxed">
               <span class="lg:hidden">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111...</span>
-              <span class="hidden lg:inline">Simulación: no se procesan pagos reales. 4111 1111 1111 1111 → aprobado · 4000 0000 0000 0002 → rechazado.</span>
+              <span class="hidden lg:inline">Simulación: no se procesan pagos reales. 4111 1111 1111 1111 → aprobado ·
+                4000 0000 0000 0002 → rechazado.</span>
             </div>
 
             <!-- Botones Desktop -->
@@ -992,8 +1033,102 @@
       </div> <!-- Fin Contenedor -->
 
       <!-- Footer Mobile -->
-      <footer class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Pagar y contratar</button>
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Pagar y
+          contratar</button>
+      </footer>
+
+    </section>
+
+    <!-- PANTALLA 06: CONFIRMACIÓN / ÉXITO (Paso 5) -->
+    <section data-paso="5" class="flex flex-col min-h-screen bg-bg">
+
+      <!-- Header (Solo Desktop) -->
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm border-b border-border lg:border-none">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <!-- Contenedor Principal Centrado -->
+      <div class="flex-1 flex flex-col items-center justify-center p-4 py-12 lg:p-12 w-full max-w-2xl mx-auto">
+
+        <!-- Tarjeta Central de Éxito -->
+        <div
+          class="bg-transparent lg:bg-white lg:p-12 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm w-full flex flex-col items-center text-center">
+
+          <!-- Ícono de Éxito -->
+          <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <!-- Títulos y Mensaje -->
+          <h1 class="text-[28px] leading-tight lg:text-3xl font-extrabold text-text mb-2">
+            ¡Listo, Juan!<br>Tu celular ya está protegido
+          </h1>
+          <p class="text-sm lg:text-base text-muted mb-6">
+            Te enviamos la póliza a juan.perez@mail.com
+          </p>
+
+          <!-- Número de Póliza -->
+          <div
+            class="bg-primary-50 text-primary-700 font-bold text-lg lg:text-xl px-6 py-3 rounded-lg mb-8 tracking-wide">
+            POL-2026-000123
+          </div>
+
+          <!-- Cuadro de Detalle del Seguro -->
+          <div
+            class="w-full bg-white border border-border rounded-[var(--radius)] p-5 flex flex-col gap-3 text-sm mb-8 lg:mb-10 text-left">
+            <div class="flex justify-between items-center">
+              <span class="text-muted">Plan</span>
+              <span class="font-bold text-text">Plus</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-muted">Equipo</span>
+              <span class="font-bold text-text">Samsung Galaxy A55</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-muted">Vigencia desde</span>
+              <span class="font-bold text-text">23/10/2026</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-muted">Cuota mensual</span>
+              <span class="font-bold text-text">$ 3.000</span>
+            </div>
+          </div>
+
+          <!-- Botones de Acción (Desktop) -->
+          <div class="hidden lg:flex items-center gap-4 w-full">
+            <button type="button" class="btn flex-1 py-3 text-base cursor-pointer">Descargar póliza</button>
+            <button type="button"
+              class="btn bg-white text-primary border border-primary hover:bg-primary-50 flex-1 py-3 text-base cursor-pointer">Volver
+              al inicio</button>
+          </div>
+
+        </div> <!-- Fin Tarjeta Central -->
+
+      </div> <!-- Fin Contenedor -->
+
+      <!-- Botones de Acción (Mobile - Fijos abajo) -->
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Descargar póliza</button>
+        <button type="button"
+          class="btn w-full py-3.5 text-base font-semibold bg-white text-primary border border-transparent hover:bg-primary-50 cursor-pointer">Volver
+          al inicio</button>
       </footer>
 
     </section>
