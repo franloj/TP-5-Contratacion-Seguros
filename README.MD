@@ -6,7 +6,7 @@ El usuario puede cotizar el seguro de su celular, elegir un plan, cargar sus dat
 
 ## 🚀 Sitio Publicado
 Puedes ver el proyecto funcionando en vivo aquí: 
-**[Ingresa aquí el link de tu sitio en Netlify, ej: https://tu-sitio-cubri.netlify.app]**
+**[https://tp-5-contratacion-seguros.netlify.app/]**
 
 ## 🛠️ Stack Tecnológico
 - **HTML5** (Semántico)
