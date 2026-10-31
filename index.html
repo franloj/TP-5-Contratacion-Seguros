@@ -1042,7 +1042,7 @@
     </section>
 
     <!-- PANTALLA 06: CONFIRMACIÓN / ÉXITO (Paso 5) -->
-    <section data-paso="5" class="flex flex-col min-h-screen bg-bg">
+    <section data-paso="5" hidden class="flex flex-col min-h-screen bg-bg">
 
       <!-- Header (Solo Desktop) -->
       <header
@@ -1129,6 +1129,78 @@
         <button type="button"
           class="btn w-full py-3.5 text-base font-semibold bg-white text-primary border border-transparent hover:bg-primary-50 cursor-pointer">Volver
           al inicio</button>
+      </footer>
+
+    </section>
+
+    <!-- PANTALLA 07: ERROR DE PAGO (Paso 6) -->
+    <section data-paso="6" class="flex flex-col min-h-screen bg-bg">
+
+      <!-- Header (Solo Desktop) -->
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm border-b border-border lg:border-none">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <!-- Contenedor Principal Centrado -->
+      <div class="flex-1 flex flex-col items-center justify-center p-4 py-12 lg:p-12 w-full max-w-2xl mx-auto">
+
+        <!-- Tarjeta Central de Error -->
+        <div
+          class="bg-transparent lg:bg-white lg:p-12 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm w-full flex flex-col items-center text-center">
+
+          <!-- Ícono de Error (Corregido) -->
+          <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mb-6 text-error">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </div>
+
+          <!-- Títulos y Mensaje -->
+          <h1 class="text-[24px] leading-tight lg:text-[28px] font-extrabold text-text mb-4">
+            No pudimos procesar el pago
+          </h1>
+          <p class="text-sm lg:text-base text-muted leading-relaxed mb-6 max-w-md mx-auto">
+            La tarjeta fue rechazada. Revisá los datos o probá con otro medio de pago. Tus datos quedaron guardados.
+          </p>
+
+          <!-- Aviso de Simulación de Error -->
+          <div
+            class="w-full bg-amber-50 border border-amber-200/80 rounded-[var(--radius)] p-4 text-amber-800 text-xs font-semibold text-left lg:text-center mb-8 lg:mb-10">
+            Tarjeta de prueba que fuerza el error: 4000 0000 0000 0002
+          </div>
+
+          <!-- Botones de Acción (Desktop) -->
+          <div class="hidden lg:flex items-center gap-4 w-full">
+            <button type="button" class="btn flex-1 py-3 text-base cursor-pointer">Reintentar pago</button>
+            <button type="button"
+              class="btn bg-white text-primary border border-primary hover:bg-primary-50 flex-1 py-3 text-base cursor-pointer">Cambiar
+              medio de pago</button>
+          </div>
+
+        </div> <!-- Fin Tarjeta Central -->
+
+      </div> <!-- Fin Contenedor -->
+
+      <!-- Botones de Acción (Mobile - Fijos abajo) -->
+      <footer
+        class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border flex flex-col gap-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Reintentar pago</button>
+        <button type="button"
+          class="btn w-full py-3.5 text-base font-semibold bg-white text-primary border border-primary hover:bg-primary-50 cursor-pointer">Cambiar
+          medio de pago</button>
       </footer>
 
     </section>
