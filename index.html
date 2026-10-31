@@ -589,7 +589,7 @@
     </section>
 
     <!-- PANTALLA 04: DATOS PERSONALES (Paso 3) -->
-    <section data-paso="3" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+    <section data-paso="3" hidden class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
 
       <!-- Header Mobile -->
       <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
@@ -763,6 +763,240 @@
 
     </section>
 
+<!-- PANTALLA 05: PAGO (Paso 4) -->
+    <section data-paso="4" class="flex flex-col min-h-screen lg:block lg:min-h-0 bg-bg">
+
+      <!-- Header Mobile -->
+      <header class="flex lg:hidden items-center p-4 bg-white border-b border-border gap-3">
+        <button type="button" class="text-text p-1 cursor-pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <span class="font-extrabold text-text text-lg">Pago</span>
+      </header>
+
+      <!-- Header Desktop -->
+      <header
+        class="hidden lg:flex items-center justify-between p-4 lg:px-8 lg:py-4 bg-white lg:rounded-[var(--radius)] lg:mx-8 lg:mt-6 shadow-sm">
+        <div class="flex items-center gap-2">
+          <img src="img/Logo mark.svg" alt="Logo Cubrí" class="w-7 h-7">
+          <span class="text-primary font-extrabold text-xl tracking-tight">Cubrí</span>
+        </div>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+          <a href="#" class="hover:text-text transition-colors">Seguros</a>
+          <a href="#" class="hover:text-text transition-colors">Siniestros</a>
+          <a href="#" class="hover:text-text transition-colors">Ayuda</a>
+          <button class="btn px-4 py-2 text-sm" data-variant="outline">Mi cuenta</button>
+        </nav>
+      </header>
+
+      <!-- Contenedor Principal -->
+      <div class="flex-1 p-4 lg:p-12 lg:max-w-7xl lg:mx-auto w-full">
+
+        <!-- Títulos Desktop -->
+        <div class="hidden lg:block mb-6">
+          <span class="text-sm text-primary font-bold block mb-1">Seguro de Celular</span>
+          <h2 class="text-3xl font-extrabold text-text">Pago</h2>
+        </div>
+
+        <!-- Stepper (Paso 4 Activo) -->
+        <div
+          class="flex items-center justify-between w-full py-4 px-4 lg:px-6 bg-white border-b border-border lg:border lg:rounded-[var(--radius)] lg:shadow-sm mb-6 lg:mb-8 -mx-4 lg:mx-0 w-[calc(100%+2rem)] lg:w-full">
+
+          <!-- Paso 1 Completo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[13px] lg:text-sm font-bold text-success">Cotizar</span>
+          </div>
+          <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 2 Completo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[13px] lg:text-sm font-bold text-success">Plan</span>
+          </div>
+          <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 3 Completo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-[13px] lg:text-sm font-bold text-success">Datos</span>
+          </div>
+          <div class="h-px bg-success flex-1 mx-2 lg:mx-4"></div>
+
+          <!-- Paso 4 Activo -->
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <div
+              class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
+              4</div>
+            <span class="text-[13px] lg:text-sm font-bold text-primary">Pago</span>
+          </div>
+        </div>
+
+        <!-- Grilla Principal -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
+
+          <!-- Columna Izquierda: Resumen Mobile + Formulario de Pago -->
+          <div
+            class="bg-transparent lg:bg-white lg:p-8 lg:rounded-[var(--radius)] lg:border lg:border-border lg:shadow-sm flex flex-col gap-6">
+
+            <!-- Resumen Compacto (Solo Mobile) -->
+            <div class="lg:hidden bg-primary-50/70 border border-indigo-200/80 rounded-[var(--radius)] p-4 flex flex-col gap-2.5 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Seguro</span>
+                <span class="font-bold text-text">Celular · Plan Plus</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Equipo</span>
+                <span class="font-bold text-text">Samsung Galaxy A55</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Titular</span>
+                <span class="font-bold text-text">Juan Pérez</span>
+              </div>
+              <hr class="my-1 border-indigo-200/80">
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Total mensual</span>
+                <span class="text-base font-extrabold text-text">$ 3.000</span>
+              </div>
+            </div>
+
+            <!-- Selección de Medio de Pago (Ambos deseleccionados inicialmente) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+              <!-- Tarjeta de crédito -->
+              <label
+                class="p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
+                <input type="radio" name="metodo-pago" value="credito" class="hidden">
+                <div class="w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
+                <span class="font-bold text-sm text-text">Tarjeta de crédito</span>
+              </label>
+
+              <!-- Tarjeta de débito -->
+              <label
+                class="p-4 flex items-center gap-3 border border-border bg-white rounded-[var(--radius)] cursor-pointer hover:bg-gray-50 transition-colors">
+                <input type="radio" name="metodo-pago" value="debito" class="hidden">
+                <div class="w-5 h-5 rounded-full border-2 border-border bg-white shrink-0"></div>
+                <span class="font-bold text-sm text-text">Tarjeta de débito</span>
+              </label>
+            </div>
+
+            <!-- Inputs de la Tarjeta -->
+            <form class="grid grid-cols-2 gap-4 lg:gap-6">
+              <!-- Número de tarjeta -->
+              <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
+                <label for="numero-tarjeta" class="text-sm font-bold text-text">Número de tarjeta</label>
+                <input type="text" id="numero-tarjeta"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="4111 1111 1111 1111">
+              </div>
+
+              <!-- Titular de la tarjeta (Exigido por el TP) -->
+              <div class="col-span-2 lg:col-span-1 form-group flex flex-col gap-1.5">
+                <label for="titular-tarjeta" class="text-sm font-bold text-text">Titular</label>
+                <input type="text" id="titular-tarjeta"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium uppercase"
+                  value="JUAN PEREZ">
+              </div>
+
+              <!-- Vencimiento -->
+              <div class="col-span-1 form-group flex flex-col gap-1.5">
+                <label for="vencimiento" class="text-sm font-bold text-text">Vencimiento</label>
+                <input type="text" id="vencimiento"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium"
+                  value="12/28">
+              </div>
+
+              <!-- CVV -->
+              <div class="col-span-1 form-group flex flex-col gap-1.5">
+                <label for="cvv" class="text-sm font-bold text-text">CVV</label>
+                <input type="password" id="cvv" maxlength="3"
+                  class="w-full p-3 rounded-[var(--radius)] border border-border bg-white text-text outline-none focus:border-primary font-medium tracking-widest"
+                  value="123">
+              </div>
+            </form>
+
+            <!-- Aviso de Simulación -->
+            <div class="bg-amber-50 border border-amber-200/80 rounded-[var(--radius)] p-3.5 text-amber-800 text-xs font-medium leading-relaxed">
+              <span class="lg:hidden">Simulación: no se procesan pagos reales. Usá la tarjeta de prueba 4111...</span>
+              <span class="hidden lg:inline">Simulación: no se procesan pagos reales. 4111 1111 1111 1111 → aprobado · 4000 0000 0000 0002 → rechazado.</span>
+            </div>
+
+            <!-- Botones Desktop -->
+            <div class="mt-4 pt-6 border-t border-border hidden lg:flex justify-between items-center">
+              <button type="button"
+                class="btn bg-white text-primary border border-primary hover:bg-primary-50 px-8 text-base w-auto cursor-pointer">Volver</button>
+              <button type="button" class="btn px-8 text-base w-auto cursor-pointer">Pagar y contratar</button>
+            </div>
+
+          </div>
+
+          <!-- Columna Derecha: Tarjeta Resumen (Solo Desktop) -->
+          <div
+            class="hidden lg:flex flex-col bg-white p-6 rounded-[var(--radius)] border border-border shadow-sm h-fit">
+            <h3 class="font-extrabold text-lg text-text mb-5">Resumen</h3>
+            <div class="flex flex-col gap-3 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Seguro</span>
+                <span class="font-bold text-text">Celular</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Equipo</span>
+                <span class="font-bold text-text">Samsung Galaxy A55</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Plan</span>
+                <span class="font-bold text-text">Plus</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted">Titular</span>
+                <span class="font-bold text-text">Juan Pérez</span>
+              </div>
+            </div>
+
+            <hr class="my-5 border-border">
+
+            <div class="flex justify-between items-center mb-5">
+              <span class="text-sm text-muted">Total mensual</span>
+              <span class="text-lg font-extrabold text-text">$ 3.000</span>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-semibold">
+              <div class="min-w-[16px] text-success">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span class="text-muted font-normal">Contratación 100% online · cancelás cuando quieras</span>
+            </div>
+          </div>
+
+        </div> <!-- Fin Grilla -->
+      </div> <!-- Fin Contenedor -->
+
+      <!-- Footer Mobile -->
+      <footer class="p-4 mt-auto lg:hidden w-full bg-white border-t border-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <button type="button" class="btn w-full py-3.5 text-base font-semibold cursor-pointer">Pagar y contratar</button>
+      </footer>
+
+    </section>
   </main>
 </body>
 
